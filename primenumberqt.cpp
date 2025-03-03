@@ -25,6 +25,7 @@ void PrimeNumberQT::reset(){
     currentNumber = startNumber;
 }
 
+
 void PrimeNumberQT::displayResult(bool canDivideCurrent){
     if(canDivideCurrent){
         viewProcess->setText("This is not a prime number.");
@@ -33,12 +34,25 @@ void PrimeNumberQT::displayResult(bool canDivideCurrent){
     }
 }
 
+/**
+ * @brief PrimeNumberQT::endProcess
+ *
+ * When ended the process successfully, this will be run.
+ *
+ * @param canDivideCurrent boolean type
+ */
 void PrimeNumberQT::endProcess(bool canDivideCurrent){
     this->progressBar->setValue(maxProgress);
     stop(true);
     displayResult(canDivideCurrent);
 }
 
+/**
+ * @brief PrimeNumberQT::onTimeout
+ *
+ * Timer trigger function
+ *
+ */
 void PrimeNumberQT::onTimeout(){
     if(this->targetNumber==2){
         endProcess(false);

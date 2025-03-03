@@ -2,6 +2,14 @@
 
 InputUtil::InputUtil() {}
 
+/**
+ * @brief InputUtil::getValueAsInt
+ *
+ * Parse the input as integer number
+ *
+ * @param input, it can take as QLineEdit type
+ * @return the integer value of input data
+ */
 int InputUtil::getValueAsInt(QLineEdit *input){
     if (input == nullptr) {
         return 0;

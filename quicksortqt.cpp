@@ -11,6 +11,13 @@ QuickSortQt::QuickSortQt(QPushButton *startButton,QPushButton *stopButton,QPushB
     connect(generateNumbersButton, &QPushButton::clicked,this,&QuickSortQt::generateNumbers);
 }
 
+/**
+ * @brief QuickSortQt::generateNumbers
+ *
+ * When clicked generate button, the function will be triggered.
+ * It produces an integer array with values between -100,000 and 100,000, with the size specified.
+ *
+ */
 void QuickSortQt::generateNumbers(){
     capacity = InputUtil::getValueAsInt(capacityInput);
     if(capacity > 1){
@@ -60,6 +67,12 @@ void QuickSortQt::stop(bool disableReset){
     listNumbers->clear();
 }
 
+/**
+ * @brief PrimeNumberQT::onTimeout
+ *
+ * Timer trigger function
+ *
+ */
 void QuickSortQt::onTimeout(){
     if (stack.empty()) {
         isSorted = true;
@@ -70,6 +83,12 @@ void QuickSortQt::onTimeout(){
     }
 }
 
+/**
+ * @brief QuickSortQt::processNextOrder
+ *
+ * The function provides to go next process step. In case of timeout, It is called
+ *
+ */
 void QuickSortQt::processNextOrder(){
     auto [l, h] = stack.top();
     stack.pop();
