@@ -5,6 +5,7 @@
 #include <QPushButton>
 #include "timerbase.h"
 #include "inpututil.h"
+#include "mathutil.h"
 
 PrimeNumberQT::PrimeNumberQT(QPushButton *startButton,QPushButton *stopButton,QPushButton *pauseButton, QLabel *viewProcess, QLineEdit *lineEdit, QProgressBar *progressBar, QObject *parent)
     : TimerBase{startButton,stopButton,pauseButton, parent},viewProcess{viewProcess}, lineEdit{lineEdit}, progressBar{progressBar}

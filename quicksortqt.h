@@ -33,6 +33,14 @@ public:
      * @param listNumbers QListWidget to display the numbers being sorted
      * @param parent Parent QObject (default is nullptr)
      */
+    explicit QuickSortQt(QPushButton *startButton,
+                         QPushButton *stopButton,
+                         QPushButton *pauseButton,
+                         QPushButton *generateNumbersButton,
+                         QLineEdit *capacityInput,
+                         QLineEdit *timeoutInput,
+                         QListWidget *listNumbers,
+                         QObject *parent = nullptr);
 private slots:
     void generateNumbers();
     void updateList();
